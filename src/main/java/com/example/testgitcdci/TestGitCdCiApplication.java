@@ -22,5 +22,4 @@ public class TestGitCdCiApplication {
     public static void main(String[] args) {
         SpringApplication.run(TestGitCdCiApplication.class, args);
     }
-
 }
