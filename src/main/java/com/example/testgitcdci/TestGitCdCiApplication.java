@@ -14,6 +14,11 @@ public class TestGitCdCiApplication {
         return "Hello application !!!";
     }
 
+    @GetMapping
+    public String getBye() {
+        return "Bye !!!";
+    }
+
     public static void main(String[] args) {
         SpringApplication.run(TestGitCdCiApplication.class, args);
     }
