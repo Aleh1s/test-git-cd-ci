@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 public class TestGitCdCiApplication {
 
-    @GetMapping
+    @GetMapping("/hello")
     public String getHello() {
         return "Hello application !!!";
     }
 
-    @GetMapping
+    @GetMapping("/bye")
     public String getBye() {
         return "Bye !!!";
     }
