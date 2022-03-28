@@ -22,7 +22,7 @@ class TestGitCdCiApplicationTests {
 
         int result = calculator.calculate(a, b);
 
-        assertThat(result).isEqualTo(50);
+        assertThat(result).isEqualTo(60);
     }
 
     class Calculator {
@@ -30,5 +30,4 @@ class TestGitCdCiApplicationTests {
             return a + b;
         }
     }
-
 }
