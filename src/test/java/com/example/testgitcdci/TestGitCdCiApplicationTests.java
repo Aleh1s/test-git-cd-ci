@@ -22,7 +22,7 @@ class TestGitCdCiApplicationTests {
 
         int result = calculator.calculate(a, b);
 
-        assertThat(result).isEqualTo(60);
+        assertThat(result).isEqualTo(50);
     }
 
     class Calculator {
