@@ -28,6 +28,10 @@ jobs:
 
     - name: Test with maven
       run: mvn clean verify
+    - name: Test Coverage
+      uses: codecov/codecov-action@v1
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
 
   build:
     needs: test
