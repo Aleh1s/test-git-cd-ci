@@ -30,4 +30,5 @@ class TestGitCdCiApplicationTests {
             return a + b;
         }
     }
+
 }
