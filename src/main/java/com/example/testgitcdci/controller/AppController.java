@@ -10,4 +10,9 @@ public class AppController {
     public String getHello() {
         return "Hello !!!";
     }
+
+    @GetMapping("/bye")
+    public String getBye() {
+        return "Bye !!!";
+    }
 }
