@@ -1,4 +1,10 @@
 FROM openjdk:17
+
 EXPOSE 8080
-ADD target/test-git-cd-ci.jar test-git-cd-ci.jar
-ENTRYPOINT ["java", "-jar", "/test-git-cd-ci.jar"]
+
+COPY ./target/test-git-cd-ci.jar /apps/test-git-cd-ci.jar
+COPY ./entrypoint.sh /apps/entrypoint.sh
+
+RUN chmod +x /apps/entrypoint.sh
+
+CMD ["/apps/entrypoint.sh"]
