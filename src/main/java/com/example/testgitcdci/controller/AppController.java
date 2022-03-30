@@ -11,9 +11,8 @@ public class AppController {
         return "Hello !!!";
     }
 
-    @GetMapping
+    @GetMapping("/bye")
     public String getBye() {
         return "Bye !!!";
     }
-
 }
