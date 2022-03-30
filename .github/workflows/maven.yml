@@ -29,12 +29,13 @@ jobs:
     - name: Test with maven
       run: mvn -B clean verify
 
-  build:
+  build-and-push:
 
     needs: test
     runs-on: ubuntu-latest
 
     steps:
+
     - name: Checkout master
       uses: actions/checkout@v2
 
@@ -47,15 +48,6 @@ jobs:
 
     - name: Build with Maven
       run: mvn -B clean install
-
-  deploy:
-
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout master
-      uses: actions/checkout@v2
 
     - name: Build & push Docker image
       uses: mr-smithers-excellent/docker-build-push@v5
