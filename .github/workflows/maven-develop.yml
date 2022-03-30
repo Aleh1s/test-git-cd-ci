@@ -55,7 +55,7 @@ jobs:
         image: 22022022/test-git-cd-ci
         tags: latest
         registry: docker.io
-        dockerfile: Dockerfile
+        dockerfile: Dockerfile.web
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
