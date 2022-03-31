@@ -11,5 +11,6 @@ spring:
     driver-class-name: org.postgresql.Driver
     type: org.apache.tomcat.jdbc.pool.DataSource
   jpa:
+    database-platform: org.apache.tomcat.jdbc.pool.DataSource
     hibernate:
       ddl-auto: update
