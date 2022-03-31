@@ -26,6 +26,9 @@ jobs:
         distribution: 'temurin'
         cache: maven
 
+    - name: Create a Postgres DB
+      run: docker run --name postgres-db -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=admin -d -p 5431:5432 postgres:alpine
+
     - name: Test with maven
       run: mvn -B clean verify
 
