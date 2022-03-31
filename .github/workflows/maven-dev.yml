@@ -5,9 +5,9 @@ name: Test Git CD/CI Application
 
 on:
   push:
-    branches: [ master ]
+    branches: [ develop ]
   pull_request:
-    branches: [ master ]
+    branches: [ develop ]
 
 jobs:
 
@@ -47,12 +47,12 @@ jobs:
         cache: maven
 
     - name: Build with Maven
-      run: mvn -B clean install
+      run: mvn install -DskipTests
 
     - name: Build & push Docker image
       uses: mr-smithers-excellent/docker-build-push@v5
       with:
-        image: 22022022/test-git-cd-ci
+        image: 22022022/test-git-cd-ci-dev
         tags: latest
         registry: docker.io
         dockerfile: Dockerfile
