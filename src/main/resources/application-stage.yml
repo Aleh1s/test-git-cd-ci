@@ -3,11 +3,11 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://ec2-52-48-159-67.eu-west-1.compute.amazonaws.com:5432/ddc43ul81r1of3
-    username: ztmfiouoqruxod
-    password: 1be9a173acff9bb6a2be41919262b5f8685c22c445051f87f15d66b8877cc50d
-    driver-class-name: org.postgresql.Driver
-    type: org.apache.tomcat.jdbc.pool.DataSource
+    url: ${SPRING_DATASOURCE_URL:jdbc:h2://mem:db;DB_CLOSE_DELAY=-1}
+    username: ${SPRING_DATASOURCE_USERNAME:sa}
+    password: ${SPRING_DATASOURCE_PASSWORD:sa}
+    driver-class-name: ${SPRING_DATASOURCE_DRIVER-CLASS-NAME:org.h2.Driver}
+    type: ${SPRING_DATASOURCE_TYPE:org.apache.tomcat.jdbc.pool.DataSource}
   jpa:
     hibernate:
       ddl-auto: update
@@ -16,3 +16,20 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
     show-sql: true
+
+
+#spring:
+#  datasource:
+#    url: jdbc:postgresql://ec2-52-48-159-67.eu-west-1.compute.amazonaws.com:5432/ddc43ul81r1of3
+#    username: ztmfiouoqruxod
+#    password: 1be9a173acff9bb6a2be41919262b5f8685c22c445051f87f15d66b8877cc50d
+#    driver-class-name: org.postgresql.Driver
+#    type: org.apache.tomcat.jdbc.pool.DataSource
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.PostgreSQLDialect
+#        format_sql: true
+#    show-sql: true
