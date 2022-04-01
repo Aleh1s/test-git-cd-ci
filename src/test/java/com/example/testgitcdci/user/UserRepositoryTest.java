@@ -1,7 +1,7 @@
-package com.example.testgitcdci.repository;
+package com.example.testgitcdci.user;
 
-import com.example.testgitcdci.UserEntity;
-import com.example.testgitcdci.UserRepo;
+import com.example.testgitcdci.entity.UserEntity;
+import com.example.testgitcdci.repository.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -11,11 +11,11 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 @DataJpaTest
 public class UserRepositoryTest {
 
-    private final UserRepo userRepo;
+    private final UserRepository userRepository;
 
     @Autowired
-    public UserRepositoryTest(UserRepo userRepo) {
-        this.userRepo = userRepo;
+    public UserRepositoryTest(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
     @Test
@@ -24,9 +24,9 @@ public class UserRepositoryTest {
         UserEntity user = new UserEntity();
         user.setName("Alex");
 
-        userRepo.save(user);
+        userRepository.save(user);
 
-        UserEntity expected = userRepo.getById(1L);
+        UserEntity expected = userRepository.getById(1L);
 
         assertThat(expected.getName()).isEqualTo("Alex");
 
